@@ -1,0 +1,262 @@
+// Resume styles
+
+
+// Header
+
+.page-header {
+  padding: 1.5rem 0;
+
+  .avatar {
+    width: 200px;
+    max-width: 100%;
+    overflow: hidden;
+    @include border-radius(100px);
+    margin: 0 auto;
+    display: block;
+  }
+
+  .header-name {
+    @include sans_bold;
+    font-size: 3rem;
+    text-align: center;
+    letter-spacing: -.15rem;
+    line-height: 1;
+    margin: 1rem 0 0;
+  }
+
+  .header-name-row {
+    // @include clearfix;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+  }
+
+  .header-contact-info {
+    @include sans;
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 1rem;
+  }
+
+  .title-bar {
+    @include clearfix;
+
+    .header-title {
+      @include sans_light;
+      line-height: 2rem;
+      letter-spacing: -.05rem;
+
+      @include media_larger_than_mobile {
+        float: left;
+        margin: 0;
+      }
+    }
+  }
+
+  // .executive-summary {
+  //   @include media_larger_than_mobile {
+  //     font-size: 1.125rem;
+  //   }
+  // }
+}
+
+.icon-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  top: 4px;
+
+  @include media_larger_than_mobile {
+    float: right;
+    border-top: none;
+  }
+
+  .icon-link-item {
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  .icon-link {
+    display: inline-block;
+
+    .icon path {
+      @include transition(fill $x-time $x-ease);
+      fill: $white;
+    }
+
+    &:hover .icon path {
+      fill: $sky;
+    }
+  }
+
+  .icon {
+    height: 28px;
+  }
+}
+
+.contact-button {
+  @include border-radius(3px);
+  @include sans_bold;
+  @include transition(background-color $x-time $x-ease);
+  background-color: $white;
+  color: $black;
+  line-height: 48px;
+  text-align: center;
+  width: 220px;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: $sky;
+    color: $black;
+  }
+
+  &.not-looking {
+    width: 400px;
+  }
+}
+
+
+// Content
+
+.section-header {
+  display: flex;
+  align-items: center;
+}
+
+.content-section {
+  margin: 0 0 3rem;
+
+  .resume-item {
+    margin-bottom: 1rem;
+  }
+
+  .resume-item-title {
+    @include sans_light;
+    font-size: 1.25rem;
+    letter-spacing: -.05rem;
+    line-height: 1.1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  // .resume-item-description {
+  //   display: inline;
+  // }
+
+  .resume-item-duration {
+    text-align: right;
+  }
+
+  .resume-item-name {
+    @include sans_bold;
+    width: 48%;
+    font-size: 1.25rem;
+  }
+
+  .resume-item-entity {
+    width: 48%;
+    // display: inline-block;
+  }
+
+  .resume-item-summary {
+    font-size: 1.125rem;
+    line-height: 1;
+  }
+
+  .resume-item-details {
+    font-size: 1rem;
+  }
+
+  .resume-item-skills {
+    font-family: "Consolas", Monospace;
+    font-size: 0.7rem;
+  }
+}
+
+
+// Footer
+
+.page-footer {
+  border-top: 4px solid #c7c7c7;
+  padding-top: 1.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .footer-line {
+    margin: 0;
+    font-size: .875rem;
+    color: #999;
+  }
+}
+
+
+// Print ---------------------------------------------------------------------
+
+.print-only {
+  display: none !important
+}
+
+@media print {
+  .no-print {
+    display: none !important
+  }
+
+  .print-only {
+    display: block !important
+  }
+
+  body {
+    font-size: 12px;
+    line-height: 1rem;
+  }
+
+  .page-header {
+    padding: 1rem 0 .2rem;
+
+    .header-name {
+      @include sans_bold;
+      font-size: 2rem;
+      margin: 0 0 .2rem;
+    }
+  }
+
+  .section-header {
+    @include section_border_thin;
+    margin-bottom: 1rem;
+
+    h2 {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .content-section {
+    margin: 0 0 1rem;
+
+    .resume-item {
+      margin-bottom: 1rem;
+    }
+
+    .resume-item-title {
+      font-size: 16px;
+      line-height: .7em;
+    }
+
+    .resume-item-details {
+      font-size: 12px;
+      margin: 0 0 .75rem;
+      line-height: .7em;
+      font-style: italic;
+
+      &.award-title {
+        font-size: 11px;
+      }
+    }
+  }
+}

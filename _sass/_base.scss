@@ -1,0 +1,133 @@
+// Base styles
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  background: $darksky;
+}
+
+body {
+  @include serif;
+  color: $text-color;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a {
+  @include transition(color $x-time);
+  color: $sky;
+  text-decoration: none;
+
+  &:hover {
+    color: $pink;
+  }
+}
+
+h2 {
+  @include sans_regular;
+  font-size: 1.75rem;
+  letter-spacing: -.05rem;
+  margin: 0;
+}
+
+hr {
+  width: 100%;
+  margin-left: 15px;
+}
+
+// Details fade-in
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-top: -10px
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 0px
+  }
+}
+
+details[open] {
+
+  // Rotating triangle
+  & summary:after {
+    transform: rotate(180deg);
+  }
+
+  // Fade-in
+  & summary~* {
+    animation: sweep $x-time $x-ease;
+  }
+}
+
+summary {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+
+  // Rotating triangle
+  &:after {
+    @include transition($x-time);
+    content: '🛆';
+    color: $sky;
+    font-size: 8pt;
+    height: 12px;
+    transform: rotate(90deg);
+  }
+
+  &:hover:after {
+    color: $pink;
+  }
+}
+
+.wrapper:before,
+.wrapper:after {
+  content: '';
+  display: table;
+}
+
+.wrapper:after {
+  clear: both;
+}
+
+.wrapper {
+  background: $gray;
+  max-width: 800px;
+  padding: 0 24px;
+  margin: 0 auto;
+  zoom: 1;
+}
+
+// clearfix (now called group,
+// via http://css-tricks.com/snippets/css/clear-fix/)
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+
+.group:after {
+  clear: both;
+}
+
+// For IE 6/7 (trigger hasLayout)
+.group {
+  zoom: 1;
+}
+
+::-moz-selection {
+  background: $white;
+  color: $black;
+  text-shadow: none;
+}
+
+::selection {
+  background: $white;
+  color: $black;
+  text-shadow: none;
+}
