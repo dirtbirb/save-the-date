@@ -1,0 +1,15 @@
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript">
+    function generateRandomPic() {
+        $.getJSON("/search.json", function (pics) {
+            const picHref = '' + pics[Math.floor(Math.random() * pics.length)].href.slice(1);
+            $("#random_pic").append('<a href="' + picHref
+                + '"><img class="random-pic" src="' + picHref + '"></img>');
+        });
+    }
+
+    $(document).ready(function () {
+        generateRandomPic();
+    });
+</script>

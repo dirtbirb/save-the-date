@@ -31,58 +31,8 @@ h2 {
   @include sans_regular;
   font-size: 1.75rem;
   letter-spacing: -.05rem;
+  text-align: center;
   margin: 0;
-}
-
-hr {
-  width: 100%;
-  margin-left: 15px;
-}
-
-// Details fade-in
-@keyframes sweep {
-  0% {
-    opacity: 0;
-    margin-top: -10px
-  }
-
-  100% {
-    opacity: 1;
-    margin-top: 0px
-  }
-}
-
-details[open] {
-
-  // Rotating triangle
-  & summary:after {
-    transform: rotate(180deg);
-  }
-
-  // Fade-in
-  & summary~* {
-    animation: sweep $x-time $x-ease;
-  }
-}
-
-summary {
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-
-  // Rotating triangle
-  &:after {
-    @include transition($x-time);
-    content: '🛆';
-    color: $sky;
-    font-size: 8pt;
-    height: 12px;
-    transform: rotate(90deg);
-  }
-
-  &:hover:after {
-    color: $pink;
-  }
 }
 
 .wrapper:before,
