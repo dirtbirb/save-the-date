@@ -45,10 +45,11 @@ h3 {
 }
 
 .wrapper {
+  @include border-radius(10px);
   background: $gray;
   max-width: 800px;
   padding: 0 24px;
-  margin: 0 auto;
+  margin: 24px auto;
   zoom: 1;
 }
 
