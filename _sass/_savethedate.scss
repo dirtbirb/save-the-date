@@ -5,8 +5,21 @@
   margin: 1.5rem 0;
 }
 
+.names {
+  @include sans_bold;
+  font-weight: 700;
+}
+
 // Content
 .page-content {
+  margin-bottom: 1.5rem;
+}
+
+.text {
+  text-align: center;
+}
+
+.save-text {
   margin-bottom: 1.5rem;
 }
 
