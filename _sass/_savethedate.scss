@@ -31,8 +31,10 @@
 
 .random-pic {
   @include border-radius(10px);
-  width: 640px;
+  width: 90%;
   margin-bottom: 1.5rem;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 // Footer
