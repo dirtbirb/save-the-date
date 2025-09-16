@@ -1,17 +1,17 @@
 // Header
 .page-header {
-  @include sans_bold;
   text-align: center;
   margin: 1.5rem 0;
 }
 
 .names {
-  @include sans_bold;
-  font-weight: 700;
+  @include serif_bold;
+  font-size: 2.5rem;
 }
 
 // Content
 .page-content {
+  @include sans_regular;
   margin-bottom: 1.5rem;
 }
 
